@@ -2,6 +2,7 @@
 session_start();
 require_once '../config/database.php';
 require_once '../models/User.php';
+require_once '../helpers/Mailer.php';
 
 // Kullanıcı zaten giriş yapmışsa dashboard'a yönlendir
 if (isset($_SESSION['user_id'])) {
@@ -35,22 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$user->id, $token, $expires]);
             
             // E-posta gönder
-            $reset_link = "http://" . $_SERVER['HTTP_HOST'] . "/pages/reset-password.php?token=" . $token;
+            $mailer = new Mailer($db);
+            $user->reset_token = $token;
             
-            $to = $user->email;
-            $subject = "Şifre Sıfırlama İsteği";
-            $message = "Merhaba " . $user->full_name . ",\n\n";
-            $message .= "Şifrenizi sıfırlamak için aşağıdaki bağlantıya tıklayın:\n";
-            $message .= $reset_link . "\n\n";
-            $message .= "Bu bağlantı 1 saat süreyle geçerlidir.\n";
-            $message .= "Eğer bu isteği siz yapmadıysanız, bu e-postayı görmezden gelebilirsiniz.\n\n";
-            $message .= "Saygılarımızla,\nAdminTE";
-            
-            $headers = "From: noreply@admintemplate.com\r\n";
-            $headers .= "Reply-To: noreply@admintemplate.com\r\n";
-            $headers .= "X-Mailer: PHP/" . phpversion();
-            
-            if (mail($to, $subject, $message, $headers)) {
+            if ($mailer->sendPasswordReset($user)) {
                 $success = true;
                 $message = 'Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.';
             } else {

@@ -1,70 +1,60 @@
-# AdminTE - Modern Admin Template
+# AdminTE - Çok Dilli Yönetim Paneli
 
-AdminTE, modern web uygulamaları için geliştirilmiş profesyonel bir admin panel template'idir. Bootstrap 5 ve modern tasarım prensipleri kullanılarak oluşturulmuştur.
+Bu proje, çok dilli destek sunan modern bir yönetim panelidir.
 
 ## Özellikler
 
-- 🎨 Modern ve temiz tasarım
-- 📱 Tam responsive yapı
-- 🎯 Bootstrap 5 entegrasyonu
-- 🔒 Güvenli oturum yönetimi
-- 📊 Dashboard widget'ları
-- 🎭 Özelleştirilebilir tema sistemi
-- 📝 Hazır CRUD sayfaları
+- 🌐 Çoklu dil desteği (Türkçe ve İngilizce)
+- 👥 Kullanıcı yönetimi
+- 🔒 Rol tabanlı yetkilendirme
+- 📱 Responsive tasarım
+- 🎨 Modern ve kullanıcı dostu arayüz
+
+## Gereksinimler
+
+- PHP 7.4 veya üzeri
+- MySQL 5.7 veya üzeri
+- Composer
+- Web sunucusu (Apache/Nginx)
 
 ## Kurulum
 
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/mavvi/adminte.git
+git clone https://github.com/kullaniciadi/AdminTE.git
 ```
 
-2. Proje dizinine gidin:
-```bash
-cd adminte
-```
-
-3. Gerekli bağımlılıkları yükleyin:
+2. Composer bağımlılıklarını yükleyin:
 ```bash
 composer install
 ```
 
-4. `.env.example` dosyasını `.env` olarak kopyalayın ve gerekli ayarları yapın:
+3. Veritabanını oluşturun:
+```bash
+mysql -u kullanici -p < sql/languages.sql
+```
+
+4. `.env.example` dosyasını `.env` olarak kopyalayın ve veritabanı bilgilerinizi girin:
 ```bash
 cp .env.example .env
 ```
 
-5. Veritabanını oluşturun:
-```bash
-php artisan migrate
-```
+5. Web sunucunuzu projenin kök dizinine yönlendirin.
 
-## Geliştirme
+## Kullanım
 
-Projeyi geliştirmek için:
-
-1. Yeni bir branch oluşturun:
-```bash
-git checkout -b feature/yeni-ozellik
-```
-
-2. Değişikliklerinizi commit edin:
-```bash
-git commit -am 'Yeni özellik eklendi'
-```
-
-3. Branch'inizi push edin:
-```bash
-git push origin feature/yeni-ozellik
-```
+1. Tarayıcınızda `http://localhost/AdminTE` adresine gidin
+2. Varsayılan giriş bilgileri:
+   - Kullanıcı adı: admin
+   - Şifre: admin123
 
 ## Katkıda Bulunma
 
-1. Bu repository'yi fork edin
-2. Feature branch'i oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add some amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+1. Bu depoyu fork edin
+2. Yeni bir özellik dalı oluşturun (`git checkout -b yeni-ozellik`)
+3. Değişikliklerinizi commit edin (`git commit -am 'Yeni özellik eklendi'`)
+4. Dalınıza push yapın (`git push origin yeni-ozellik`)
+5. Bir Pull Request oluşturun
 
 ## Lisans
 
@@ -72,4 +62,5 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## İletişim
 
-Proje Linki: [https://github.com/mavvi/adminte](https://github.com/mavvi/adminte) "# AdminTE" 
+- Website: [https://example.com](https://example.com)
+- Email: info@example.com
