@@ -72,4 +72,4 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## İletişim
 
-Proje Linki: [https://github.com/kullaniciadi/adminte](https://github.com/mavvi/adminte) "# AdminTE" 
+Proje Linki: [https://github.com/mavvi/adminte](https://github.com/mavvi/adminte) "# AdminTE" 
