@@ -21,7 +21,7 @@ Bu proje, çok dilli destek sunan modern bir yönetim panelidir.
 
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/kullaniciadi/AdminTE.git
+git clone https://github.com/mavvi/AdminTE.git
 ```
 
 2. Composer bağımlılıklarını yükleyin:
@@ -62,5 +62,5 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## İletişim
 
-- Website: [https://example.com](https://example.com)
-- Email: info@example.com
+- Website: [https://erkanakgun.com.tr](https://erkanakgun.com.tr)
+- Email: erkan@erkanakgun.com.tr
